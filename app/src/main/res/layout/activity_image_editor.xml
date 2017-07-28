@@ -1,0 +1,103 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
+                tools:context="com.github.infoshare.imageblur.view.ImageEditor"
+                style="@android:style/Theme.Holo.Light.NoActionBar.Fullscreen">
+
+    <com.github.infoshare.imageblur.component.DrawableView
+            android:id="@+id/imageView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:contentDescription="@string/image_editor"
+            android:layout_marginBottom="80dp"
+            android:background="@android:color/transparent"/>
+
+    <ImageButton
+            app:srcCompat="@android:drawable/ic_menu_search"
+            android:id="@+id/openBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@android:color/transparent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:contentDescription="@string/open_button"
+            android:onClick="openImage"/>
+
+    <ImageButton
+            app:srcCompat="@android:drawable/ic_menu_save"
+            android:id="@+id/saveBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@android:color/transparent"
+            android:layout_alignTop="@+id/openBtn"
+            android:layout_toEndOf="@+id/openBtn"
+            android:layout_marginStart="15dp"
+            android:contentDescription="@string/save_button"
+            android:onClick="saveImage"/>
+
+    <ImageButton
+            app:srcCompat="@android:drawable/ic_menu_share"
+            android:id="@+id/shareBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignBottom="@+id/openBtn"
+            android:layout_toEndOf="@+id/saveBtn"
+            android:contentDescription="@string/share_button"
+            android:layout_marginStart="15dp"
+            android:background="@android:color/transparent"
+            android:onClick="shareImage"/>
+
+    <Spinner
+            android:id="@+id/drawMode"
+            android:layout_width="90dp"
+            android:layout_height="40dp"
+            android:entries="@array/draw_options"
+            android:background="@android:color/white"
+            android:layout_marginStart="15dp"
+            android:layout_alignTop="@+id/shareBtn"
+            android:layout_toEndOf="@+id/shareBtn"
+            android:textAlignment="center"
+            android:spinnerMode="dropdown"/>
+
+    <ImageButton
+            app:srcCompat="@android:drawable/ic_menu_revert"
+            android:id="@+id/undoBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignTop="@+id/drawMode"
+            android:layout_toEndOf="@+id/drawMode"
+            android:contentDescription="@string/undo_button"
+            android:layout_marginStart="15dp"
+            android:background="@android:color/transparent"
+            android:onClick="undoDraw"/>
+
+    <ImageButton
+            app:srcCompat="@android:drawable/ic_menu_close_clear_cancel"
+            android:id="@+id/clearBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_alignTop="@+id/undoBtn"
+            android:layout_toEndOf="@+id/undoBtn"
+            android:contentDescription="@string/clear_button"
+            android:layout_marginStart="15dp"
+            android:background="@android:color/transparent"
+            android:onClick="clearImage"/>
+    <SeekBar
+            android:id="@+id/sizeBar"
+            style="@style/Widget.AppCompat.SeekBar.Discrete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:max="60"
+            android:progress="10"
+            android:layout_above="@+id/drawMode"
+            android:layout_alignParentEnd="true"
+            android:layout_alignStart="@+id/drawMode"/>
+
+</RelativeLayout>

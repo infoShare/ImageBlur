@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">ImageBlur</string>
+
+    <string name="open_button">Open Button</string>
+    <string name="save_button">Save Button</string>
+    <string name="share_button">Share Button</string>
+    <string name="draw_mode">Draw Mode</string>
+    <string name="image_editor">Image Editor</string>
+    <string name="clear_button">Clear Button</string>
+    <string name="undo_button">Undo Button</string>
+
+    <string-array name="draw_options">
+        <item>Black</item>
+        <item>Red</item>
+        <item>White</item>
+        <item>Shade</item>
+    </string-array>
+</resources>
